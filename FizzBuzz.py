@@ -1,40 +1,32 @@
 # Declare Variable
 x = 1
 
+# Function to print (Strictly just a formatting idea)
+def print_x(number, word):
+    if (number < 10):
+        print '(00%s) %s' % (number, word)
+    if (number < 100):
+        print '(0%s) %s' % (number, word)
+    if (number == 100):
+        print '(%s) %s' % (number, word)
+
 # Loop Until 100
 while x < 101:
     # Divisible by 3 and 5?
     if (x%3 == 0) and (x%5 == 0):
-        if (x < 10):
-            print '(00%s) FizzBuzz' % (x)
-        elif (x < 100):
-            print '(0%s) FizzBuzz' % (x)
-        elif (x == 100):
-            print '(%s) FizzBuzz' % (x)
+        print_x(x, "FizzBuzz")
+
     # Divisible by 3?
     elif x%3 == 0:
-        if (x < 10):
-            print '(00%s) Fizz' % (x)
-        elif (x < 100):
-            print '(0%s) Fizz' % (x)
-        elif (x == 100):
-            print '(%s) Fizz' % (x)
+        print_x(x, "Fizz")
+
     # Divisible by 5?
     elif x%5 == 0:
-        if (x < 10):
-            print '(00%s) Buzz' % (x)
-        elif (x < 100):
-            print '(0%s) Buzz' % (x)
-        elif (x == 100):
-            print '(%s) Buzz' % (x)
+        print_x(x, "Buzz")
+
     # Not divisible by 3 or 5
-    elif x < 101:
-        if (x < 10):
-            print '(00%s)' % (x)
-        elif (x < 100):
-            print '(0%s)' % (x)
-        elif (x == 100):
-            print '(%s)' % (x)
+    else:
+        print_x(x, "")
 
     # Increment the Variable
     x += 1
